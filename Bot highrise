@@ -1,0 +1,108 @@
+from highrise import BaseBot, __main__, CurrencyItem, Item, Position, AnchorPosition, Reaction, SessionMetadata, User
+from highrise.__main__ import BotDefinition
+from asyncio import run as arun, sleep
+import random
+
+class Bot(BaseBot):
+    def __init__(self):
+        super().__init__()
+        self.bot_id = ""
+        self.owner_id = ""
+        self.room_name = ""
+        self.bot_name = ""
+        self.door = Position(x=0, y=0, z=0, facing="FrontRight")
+        self.spamming = False
+
+    greetings = ["quiubo", "ola", "holis", "hola"]
+
+    responses = [
+        "hola nene/a",
+        "bienvenida/o",
+        "Hola querida/o",
+        "hola!",
+    ]
+
+    hru_responses = [ 
+        "Bien, espero que estés bien y con energía positiva",
+        "Fantásticamente bien ",
+        "Gracias cariño, estoy bien, ¿cómo estás?",
+    ]
+
+    goodbye_responses = [
+        "Adiós, espero volver a verte querido amigo/a",
+         "Adiós queridavuelve pronto, ¿vale?",
+         "adios mi buen amigo/a vuelve pronto te extraño"
+      
+    ]
+
+    wyd_responses = [
+        "¿Cómo está tu salud querida/o?",
+         "No está mal, ¿cómo estás?",
+         "Mango de hacha no hay noticias tuyas",
+        ]
+
+    wrd_responses = [
+        "Soy un robot y estoy aquí para hacer este lugar más hermoso y cuidarme"
+         "Nada querida/o, me importa mucho tú",
+         "Mi trabajo es proteger aqui y que la pases bien",
+    ]
+
+    bot_responses = [
+        "¿Mi corazón?",
+         "Querida/o, ¿llamaste?"
+         "❤️ Querida/, ¿tenías trabajo?"
+    ]
+
+    dances = {
+        "1": "idle-dance-casual",
+        "2": "dance-tiktok8",
+        "3": "dance-blackpink",
+        "4": "dance-tiktok2",
+        "5": "dance-pennywise",
+        "6": "dance-russian",
+        "7": "dance-shoppingcart",
+        "8": "dance-tiktok9",
+        "9": "dance-weird",
+        "10": "dance-tiktok10",
+        "11": "idle-loop-sitfloor",
+        "12": "emoji-thumbsup",
+        "13": "emote-lust",
+        "14": "emoji-cursing",
+        "15": "emote-greedy",
+        "16": "emoji-flex",
+        "17": "emoji-gagging",
+        "18": "emoji-celebrate",
+        "19": "dance-macarena",
+        "20": "emote-no",
+        "21": "emote-sad",
+        "22": "emote-model",
+        "23": "emote-yes",
+        "24": "emote-laughing",
+        "25": "emote-bow",
+        "26": "emote-hello",
+        "27": "emote-curtsy",
+        "28": "emote-snowball",
+        "29": "emote-hot",
+        "30": "emote-snowangel",
+        "31": "emote-charging",
+        "32": "emote-wave",
+        "33": "emote-confused",
+        "34": "idle-enthusiastic",
+        "35": "emote-telekinesis",
+        "36": "emote-float",
+        "37": "emote-teleporting",
+        "38": "emote-swordfight",
+        "39": "emote-maniac",
+        "40": "emote-energyball",
+        "41": "emote-snake",
+        "42": "idle_singing",
+        "43": "emote-frog",
+        "44": "emote-superpose",
+        "45": "emote-cute",
+}
+        await __main__.main(definitions)
+
+if __name__ == "RuiiLulu":
+    room_id = "65eb56aaf33a1d3e212827f2"
+    token  = "586ed4b5af3ff0c2e14e464ee0f62d619c795a6f39bb0dd3d0e40ae3616d3526"
+    arun(Bot().start_bot(room_id, token))
